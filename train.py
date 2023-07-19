@@ -19,6 +19,8 @@ train_data=load_train_data()
 
 test_data=load_test_data()
 
+print("data loaded successfully...........")
+
 X_train = train_data.drop(columns='fake')
 X_test = test_data.drop(columns='fake')
 
@@ -36,13 +38,20 @@ print('Training Starting ...................')
 
 model = seq()
 
-model.compile( optimizer = 'adam', loss = 'categorical_crossentropy , metrics = ['accuracy'] 
-model.compile( optimizer = 'adam', loss = 'categorical_crossentropy , metrics = ['accuracy'])
+model.compile( optimizer = 'adam', loss = 'categorical_crossentropy' , metrics = ['accuracy'] )
 
 
 epochs_hist = model.fit(X_train, y_train, epochs = 50,  verbose = 1, validation_split = 0.1)
 
 
+print("Training complete______________________________________")
+
+
 
 predicted = model.predict(X_test)
+
+
+print("---------------- ")
+
+print(predicted)
 
